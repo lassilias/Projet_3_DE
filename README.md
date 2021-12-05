@@ -10,4 +10,4 @@ script.sh do these things in order:
 
 - downloading the source files 
 - building the container my_image:latest containing ubuntu image where Airflow( used as ETL tool) and Fastapi api will turn
-- docker-compose up this last container with mysql:8.0
+- docker-compose up this last container with a container mysql:8.0
