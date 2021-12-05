@@ -1,0 +1,37 @@
+version: '3.9'
+services:
+  webserver:
+    build:
+      context: .
+      dockerfile: DockerFile
+    image: my_image:latest
+    volumes:
+      - shared_volume:/home/airflow
+    container_name: test_container_test
+    ports:
+      - 8080:8080
+      - 8000:8000
+    networks:
+      - backend
+    restart: always
+    depends_on:
+      - dataBase
+  dataBase:
+    image: mysql:8.0
+    command: --default-authentication-plugin=mysql_native_password
+    volumes:
+      - shared_volume:/usr/local/var/mysql
+    restart: always
+    entrypoint: ['docker-entrypoint.sh', '--default-authentication-plugin=mysql_native_password']
+    environment:
+        MYSQL_ROOT_PASSWORD: supersecret
+    ports:
+        - "3333:3306"
+    networks:
+      - backend
+networks:
+  backend:
+    driver: "bridge"
+volumes:
+  shared_volume:
+    external: true
