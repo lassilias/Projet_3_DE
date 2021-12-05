@@ -2,7 +2,7 @@
 
 This project consists in instantiating a database from the dataset: https://github.com/martj42/international_results
 
-This dataset includes 42,899 results of international football matches starting from the very first official match in 1972 up to 2021.
+This dataset includes 42,899 results of international football matches starting from the very first official match in 1872 up to 2021.
 
 A Fastapi api was deployed to query the database.
 
