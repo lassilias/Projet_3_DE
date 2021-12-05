@@ -1,4 +1,4 @@
-# Projet_3_DE
+# Projet 3 DE
 
 This project consists in instantiating a database from the dataset: https://github.com/martj42/international_results
 
