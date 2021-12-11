@@ -42,8 +42,8 @@ def extract_and_transform(ti):
 
     df=pd.read_csv('/root/airflow/results.csv')
 
-    df['home_score'] = df['home_score'].fillna(3)
-    df['away_score'] = df['away_score'].fillna(3)
+    #df['home_score'] = df['home_score'].fillna(3)
+    #df['away_score'] = df['away_score'].fillna(3)
 
     df['home_score'] = df['home_score'].astype('int')
     df['away_score'] = df['away_score'].astype('int')
